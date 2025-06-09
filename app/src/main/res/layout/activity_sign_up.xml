@@ -10,84 +10,37 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.8"
+        android:layout_weight="1.0"
         android:orientation="vertical"
         android:gravity="center"
         android:padding="24dp">
 
-        <!-- Logo Container -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginBottom="16dp">
+        <!-- Logo Image -->
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:src="@drawable/mainlogo"
+            android:scaleType="fitCenter"
+            android:layout_marginBottom="32dp"
+            android:contentDescription="FOT NOW Logo" />
 
-            <!-- FOT Speech Bubble -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="3dp"
-                app:cardBackgroundColor="#FF6B47">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="FOT"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:padding="10dp" />
-
-            </androidx.cardview.widget.CardView>
-
-            <!-- Signal Lines -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginEnd="8dp">
-
-                <View
-                    android:layout_width="12dp"
-                    android:layout_height="2dp"
-                    android:background="#FF6B47"
-                    android:layout_marginBottom="2dp" />
-
-                <View
-                    android:layout_width="10dp"
-                    android:layout_height="2dp"
-                    android:background="#FF6B47"
-                    android:layout_marginBottom="2dp" />
-
-                <View
-                    android:layout_width="8dp"
-                    android:layout_height="2dp"
-                    android:background="#FF6B47" />
-
-            </LinearLayout>
-
-            <!-- NOW Text -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="NOW"
-                android:textColor="#4ECDC4"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-        <!-- Sign up Text -->
+        <!-- Welcome back Text -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sign up"
+            android:text="Welcome back"
             android:textColor="#FFFFFF"
             android:textSize="28sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Sign in Text -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign in to continue"
+            android:textColor="#E0FFFFFF"
+            android:textSize="16sp" />
 
     </LinearLayout>
 

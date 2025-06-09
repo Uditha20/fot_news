@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal"
+    android:background="@android:color/white">
+
+    <!-- Toolbar/Header -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginBottom="32dp">
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_arrow_back"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:padding="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Profile"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black" />
+    </RelativeLayout>
+
+    <!-- Profile Image -->
+    <ImageView
+        android:id="@+id/profile_image"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/circular_background"
+        android:src="@drawable/ic_profile_placeholder"
+        android:scaleType="centerCrop" />
+
+    <!-- User Information Card -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:elevation="4dp"
+        android:radius="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Username Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Username"
+                    android:textSize="12sp"
+                    android:textColor="@android:color/darker_gray"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/username_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Loading..."
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+
+            <!-- Email Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:textSize="12sp"
+                    android:textColor="@android:color/darker_gray"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/email_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Loading..."
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Action Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/edit_button"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Edit Profile"
+            android:textColor="@android:color/white"
+            android:background="@drawable/button_background"
+            android:layout_marginBottom="12dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/logout_button"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Logout"
+            android:textColor="@android:color/holo_red_dark"
+            android:background="@drawable/button_outline_background"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

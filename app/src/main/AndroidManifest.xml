@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,30 +16,53 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
 
-        <!-- ❌ Removed launcher from SignUpActivity -->
+        <!-- SplashActivity as launcher (initial screen) -->
         <activity
-            android:name=".SignUpActivity"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-
-        <!-- ❌ Removed launcher from MainActivity -->
-        <activity
-            android:name=".MainActivity"
+            android:name=".SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize" />
-
-        <!-- ✅ Set SignInActivity as launcher -->
-        <activity
-            android:name=".SignInActivity"
-            android:exported="true"
-            android:theme="@style/Theme.MyApplication"
-            android:windowSoftInputMode="adjustResize">
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- SignInActivity (now accessed from splash) -->
+        <activity
+            android:name=".SignInActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- SignUpActivity -->
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- MainActivity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- ProfileActivity -->
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- EditProfileActivity -->
+        <activity
+            android:name=".EditProfileActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication"
+            android:windowSoftInputMode="adjustResize" />
 
     </application>
 

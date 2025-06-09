@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8E0F0"
+    android:gravity="center">
+
+    <!-- FOT NOW Logo Image -->
+    <ImageView
+        android:id="@+id/logo_image"
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/mainlogo"
+        android:scaleType="fitCenter"
+        android:contentDescription="FOT NOW Logo" />
+
+    <!-- App Version or Loading Text (Optional) -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Loading..."
+        android:textColor="#666666"
+        android:textSize="16sp"
+        android:alpha="0.7" />
+
+</RelativeLayout>

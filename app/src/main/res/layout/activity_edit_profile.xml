@@ -7,7 +7,7 @@
     android:padding="24dp"
     android:background="@android:color/white">
 
-    <!-- Toolbar -->
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
@@ -32,7 +32,7 @@
             android:textColor="@android:color/black" />
     </RelativeLayout>
 
-    <!-- Profile Image with Change Option -->
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

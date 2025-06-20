@@ -19,69 +19,66 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private CardView tournamentCard1, tournamentCard2;
     private LinearLayout navHome, navCalendar, navTrophy;
 
-    // Sidebar Components
+
     private DrawerLayout drawerLayout;
     private LinearLayout sidebarProfile;
     private LinearLayout sidebarDevInfo;
     private LinearLayout sidebarSettings;
     private LinearLayout sidebarLogout;
-    private TextView sidebarUserName;
-    private TextView sidebarUserRole;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Initialize UI components
+
         initializeViews();
 
-        // Set click listeners
+
         setClickListeners();
 
-        // Load user profile for sidebar
+
         loadUserProfile();
     }
 
     private void initializeViews() {
-        // Header icons
+
         menuIcon = findViewById(R.id.menu_icon);
         profileIcon = findViewById(R.id.profile_icon);
 
-        // Tournament cards
+
         tournamentCard1 = findViewById(R.id.card_tournament_1);
         tournamentCard2 = findViewById(R.id.card_tournament_2);
 
-        // Bottom navigation
+
         navHome = findViewById(R.id.nav_home);
         navCalendar = findViewById(R.id.nav_calendar);
         navTrophy = findViewById(R.id.nav_trophy);
 
-        // Sidebar components
+
         drawerLayout = findViewById(R.id.drawer_layout);
         sidebarProfile = findViewById(R.id.sidebar_profile);
         sidebarDevInfo = findViewById(R.id.sidebar_dev_info);
         sidebarSettings = findViewById(R.id.sidebar_settings);
         sidebarLogout = findViewById(R.id.sidebar_logout);
-        sidebarUserName = findViewById(R.id.sidebar_user_name);
-        sidebarUserRole = findViewById(R.id.sidebar_user_role);
+
     }
 
     private void setClickListeners() {
-        // Header icons
+
         menuIcon.setOnClickListener(this);
         profileIcon.setOnClickListener(this);
 
-        // Tournament cards
+
         tournamentCard1.setOnClickListener(this);
         tournamentCard2.setOnClickListener(this);
 
-        // Bottom navigation
+
         navHome.setOnClickListener(this);
         navCalendar.setOnClickListener(this);
         navTrophy.setOnClickListener(this);
 
-        // Sidebar options
+
         sidebarProfile.setOnClickListener(this);
         sidebarDevInfo.setOnClickListener(this);
         sidebarSettings.setOnClickListener(this);
@@ -133,7 +130,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void handleTournamentClick(String tournamentName) {
         showToast("Opening " + tournamentName);
-        // TODO: Navigate to tournament details activity
+
     }
 
     private void handleNavigationClick(String section) {
@@ -141,18 +138,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // TODO: Handle bottom navigation
         switch (section) {
             case "Home":
-                // Already on home, maybe refresh or scroll to top
+
                 break;
             case "Calendar":
-                // Navigate to calendar/schedule activity
+
                 break;
             case "Trophy":
-                // Navigate to tournaments/results activity
+                Intent trophyIntent = new Intent(this, NewsActivity.class);
+                startActivity(trophyIntent);
                 break;
         }
     }
 
-    // Sidebar click handlers
+
     private void handleSidebarProfileClick() {
         drawerLayout.closeDrawer(GravityCompat.START);
         Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
@@ -168,9 +166,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void handleSidebarSettingsClick() {
         drawerLayout.closeDrawer(GravityCompat.START);
         showToast("Opening Settings");
-        // TODO: Navigate to settings activity
-        // Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
-        // startActivity(intent);
+
+
     }
 
     private void handleSidebarLogoutClick() {
@@ -179,16 +176,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void loadUserProfile() {
-        // Load user profile data from SharedPreferences, database, or API
-        String userName = getUserName(); // Get from your data source
-        String userRole = getUserRole(); // Get from your data source
 
-        sidebarUserName.setText(userName);
-        sidebarUserRole.setText(userRole);
+        String userName = getUserName();
+        String userRole = getUserRole();
+
+
     }
 
     private void showDeveloperInfo() {
-        // Create and show developer information dialog
+
         android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
         builder.setTitle("Developer Information")
                 .setMessage("App Name: Tournament Manager\n" +
@@ -207,47 +203,44 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private boolean doubleBackToExitPressedOnce = false;
 
     private void handleLogout() {
-        // Show confirmation dialog
+
         new android.app.AlertDialog.Builder(this)
                 .setTitle("Logout")
                 .setMessage("Are you sure you want to logout?")
                 .setPositiveButton("Yes", (dialog, which) -> {
-                    // Sign out from Firebase
+
                     FirebaseAuth.getInstance().signOut();
 
-                    // Clear local session data
+
                     clearUserSession();
 
-                    // Navigate to LoginActivity
                     Intent intent = new Intent(MainActivity.this, SignInActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
-                    finish(); // Close current activity
+                    finish();
                 })
                 .setNegativeButton("Cancel", null)
                 .show();
     }
 
     private void clearUserSession() {
-        // Clear SharedPreferences
+
         getSharedPreferences("user_prefs", MODE_PRIVATE)
                 .edit()
                 .clear()
                 .apply();
 
-        // Clear any other user data
-        // Clear authentication tokens
-        // Clear cached data
+
     }
 
     private String getUserName() {
-        // Get username from SharedPreferences or your data source
+
         return getSharedPreferences("user_prefs", MODE_PRIVATE)
                 .getString("user_name", "John Developer");
     }
 
     private String getUserRole() {
-        // Get user role from SharedPreferences or your data source
+
         return getSharedPreferences("user_prefs", MODE_PRIVATE)
                 .getString("user_role", "Software Developer");
     }
@@ -263,7 +256,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             this.doubleBackToExitPressedOnce = true;
             Toast.makeText(this, "Press back again to exit", Toast.LENGTH_SHORT).show();
 
-            // Reset the flag after 2 seconds
+
             new android.os.Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {

@@ -31,13 +31,13 @@ public class SignInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
-        // Initialize Firebase Auth
+
         mAuth = FirebaseAuth.getInstance();
 
-        // Initialize views
+
         initViews();
 
-        // Set click listeners
+
         setClickListeners();
     }
 
@@ -47,7 +47,7 @@ public class SignInActivity extends AppCompatActivity {
         btnSignIn = findViewById(R.id.btnSignIn);
         tvForgotPassword = findViewById(R.id.tvForgotPassword);
         tvSignUp = findViewById(R.id.tvSignUp);
-        cbRememberMe = findViewById(R.id.cbRememberMe); // ✅ Don't forget this
+        cbRememberMe = findViewById(R.id.cbRememberMe);
     }
 
     private void setClickListeners() {
@@ -107,7 +107,7 @@ public class SignInActivity extends AppCompatActivity {
 
                         Toast.makeText(SignInActivity.this, "Sign-in successful", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(SignInActivity.this, MainActivity.class));
-                        finish(); // Prevent going back
+                        finish();
                     } else {
                         Toast.makeText(SignInActivity.this, "Authentication failed: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                     }

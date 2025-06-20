@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Main Content -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -84,10 +84,10 @@
                             android:layout_width="match_parent"
                             android:layout_height="200dp"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/tech_bash_banner"
-                            android:contentDescription="Tech Bash 2023 Tournament" />
+                            android:src="@drawable/news2"
+                            android:contentDescription="Purawara Wasanthaya 2025" />
 
-                        <!-- Tournament Details -->
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -98,7 +98,7 @@
                                 android:id="@+id/tournament_title_1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Tech Bash 2023"
+                                android:text="Purawara Wasanthaya 2025"
                                 android:textSize="20sp"
                                 android:textStyle="bold"
                                 android:textColor="#212121"
@@ -108,7 +108,7 @@
                                 android:id="@+id/tournament_category_1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Sport"
+                                android:text="Tranding"
                                 android:textSize="14sp"
                                 android:textColor="#757575"
                                 android:layout_marginBottom="8dp" />
@@ -117,7 +117,8 @@
                                 android:id="@+id/tournament_description_1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Join the excitement at Tech Bash as teams battle it out in the thrilling Cricket Tournament! Watch the best players showcase their skills and compete for the ultimate title in this action-packed event. Stay tuned for match schedules"
+                                android:text="2025 organized by Welfare Students Welfare Society, Faculty of Technology, University of Colombo was successfully held at Faculty Premises, leaving a meaningful impact on all who participated. ✨
+Explore the photo album to revisit the highlights and moments of togetherness captured throughout the event."
                                 android:textSize="14sp"
                                 android:textColor="#424242"
                                 android:lineSpacingExtra="2dp" />
@@ -128,7 +129,7 @@
 
                 </androidx.cardview.widget.CardView>
 
-                <!-- Second Tournament Card -->
+
                 <androidx.cardview.widget.CardView
                     android:id="@+id/card_tournament_2"
                     android:layout_width="match_parent"
@@ -142,7 +143,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <!-- Tournament Image -->
+
                         <ImageView
                             android:id="@+id/tournament_image_2"
                             android:layout_width="match_parent"
@@ -151,7 +152,7 @@
                             android:src="@drawable/tech_bash_banner"
                             android:contentDescription="Tech Bash 2023 Tournament" />
 
-                        <!-- Tournament Details -->
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -187,7 +188,7 @@
 
         </ScrollView>
 
-        <!-- Bottom Navigation -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="56dp"
@@ -253,7 +254,6 @@
 
     </LinearLayout>
 
-    <!-- Navigation Drawer / Sidebar -->
     <LinearLayout
         android:id="@+id/navigation_drawer"
         android:layout_width="280dp"
@@ -263,7 +263,6 @@
         android:orientation="vertical"
         android:elevation="16dp">
 
-        <!-- Sidebar Header with User Profile -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="160dp"
@@ -272,7 +271,6 @@
             android:padding="24dp"
             android:gravity="center_vertical">
 
-            <!-- Profile Picture -->
             <ImageView
                 android:id="@+id/sidebar_profile_image"
                 android:layout_width="64dp"
@@ -283,29 +281,14 @@
                 android:layout_marginBottom="12dp"
                 android:contentDescription="User Profile Picture" />
 
-            <!-- User Name -->
-            <TextView
-                android:id="@+id/sidebar_user_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="John Developer"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="#FFFFFF"
-                android:layout_marginBottom="4dp" />
 
-            <!-- User Role -->
-            <TextView
-                android:id="@+id/sidebar_user_role"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Software Developer"
-                android:textSize="14sp"
-                android:textColor="#E0E0E0" />
+
+
+
 
         </LinearLayout>
 
-        <!-- Sidebar Menu Items -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -313,7 +296,7 @@
             android:orientation="vertical"
             android:paddingTop="8dp">
 
-            <!-- Profile Option -->
+
             <LinearLayout
                 android:id="@+id/sidebar_profile"
                 android:layout_width="match_parent"
@@ -341,7 +324,7 @@
 
             </LinearLayout>
 
-            <!-- Developer Info Option -->
+
             <LinearLayout
                 android:id="@+id/sidebar_dev_info"
                 android:layout_width="match_parent"
@@ -369,7 +352,7 @@
 
             </LinearLayout>
 
-            <!-- Settings Option -->
+
             <LinearLayout
                 android:id="@+id/sidebar_settings"
                 android:layout_width="match_parent"
@@ -397,7 +380,7 @@
 
             </LinearLayout>
 
-            <!-- Divider -->
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -409,7 +392,7 @@
 
         </LinearLayout>
 
-        <!-- Logout Button at Bottom -->
+
         <LinearLayout
             android:id="@+id/sidebar_logout"
             android:layout_width="match_parent"

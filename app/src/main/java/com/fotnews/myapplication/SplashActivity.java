@@ -19,24 +19,24 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        // Initialize views
+
         ImageView logoImage = findViewById(R.id.logo_image);
 
-        // Load animations
+
         Animation fadeIn = AnimationUtils.loadAnimation(this, R.anim.fade_in);
         Animation slideUp = AnimationUtils.loadAnimation(this, R.anim.slide_up);
         Animation zoomIn = AnimationUtils.loadAnimation(this, R.anim.zoom_in);
 
-        // Apply animations to logo
+
         logoImage.startAnimation(zoomIn);
 
-        // Navigate to SignInActivity after delay
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 Intent intent = new Intent(SplashActivity.this, SignInActivity.class);
                 startActivity(intent);
-                finish(); // Close splash activity
+                finish();
             }
         }, SPLASH_DURATION);
     }

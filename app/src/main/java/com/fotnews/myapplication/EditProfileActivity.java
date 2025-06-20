@@ -63,21 +63,20 @@ public class EditProfileActivity extends AppCompatActivity {
             return;
         }
 
-        // Load data from Firestore
+
         DocumentReference userRef = firestore.collection("users").document(currentUser.getUid());
         userRef.get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 DocumentSnapshot document = task.getResult();
                 if (document != null && document.exists()) {
-                    // Set username if available
+
                     if (document.contains("username")) {
                         usernameEditText.setText(document.getString("username"));
                     }
 
-                    // Set email from Firebase Auth (more reliable than Firestore for email)
+
                     emailEditText.setText(currentUser.getEmail());
 
-                    // TODO: Load profile image if available
                 }
             } else {
                 Toast.makeText(EditProfileActivity.this,
@@ -90,7 +89,7 @@ public class EditProfileActivity extends AppCompatActivity {
         backButton.setOnClickListener(v -> finish());
 
         changeImageButton.setOnClickListener(v -> {
-            // TODO: Implement image picker
+
             Toast.makeText(this, "Change profile image clicked", Toast.LENGTH_SHORT).show();
         });
 
@@ -101,7 +100,7 @@ public class EditProfileActivity extends AppCompatActivity {
         String username = usernameEditText.getText().toString().trim();
         String email = emailEditText.getText().toString().trim();
 
-        // Validate inputs
+
         if (TextUtils.isEmpty(username)) {
             usernameEditText.setError("Username is required");
             return;
@@ -120,11 +119,11 @@ public class EditProfileActivity extends AppCompatActivity {
         saveButton.setEnabled(false);
         saveButton.setText("Saving...");
 
-        // Create update map
+
         Map<String, Object> updates = new HashMap<>();
         updates.put("username", username);
 
-        // Update Firestore
+
         firestore.collection("users")
                 .document(currentUser.getUid())
                 .update(updates)
@@ -146,7 +145,7 @@ public class EditProfileActivity extends AppCompatActivity {
         currentUser.updateEmail(newEmail)
                 .addOnCompleteListener(emailTask -> {
                     if (emailTask.isSuccessful()) {
-                        // Update email in Firestore as well
+
                         firestore.collection("users")
                                 .document(currentUser.getUid())
                                 .update("email", newEmail)

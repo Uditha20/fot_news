@@ -28,25 +28,25 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        // Initialize views
+
         usernameText = findViewById(R.id.username_text);
         emailText = findViewById(R.id.email_text);
         profileImage = findViewById(R.id.profile_image);
         editButton = findViewById(R.id.edit_button);
         deleteAccountButton = findViewById(R.id.deleteAccountButton);
 
-        // Set default profile image
+
         profileImage.setImageResource(R.drawable.ic_profile_placeholder);
 
-        // Edit button click listener
+
         editButton.setOnClickListener(view -> {
             startActivity(new Intent(ProfileActivity.this, EditProfileActivity.class));
         });
 
-        // Delete button click listener
+
         deleteAccountButton.setOnClickListener(view -> showDeleteAccountDialog());
 
-        // Load user info from Firestore
+
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             String uid = user.getUid();
@@ -88,10 +88,10 @@ public class ProfileActivity extends AppCompatActivity {
 
         String uid = currentUser.getUid();
 
-        // Delete user data from Firestore
+
         db.collection("users").document(uid).delete()
                 .addOnSuccessListener(aVoid -> {
-                    // Delete Firebase Authentication user
+
                     currentUser.delete()
                             .addOnSuccessListener(aVoid1 -> {
                                 Toast.makeText(this, "Account deleted successfully", Toast.LENGTH_SHORT).show();

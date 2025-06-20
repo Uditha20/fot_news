@@ -174,7 +174,7 @@ public class SignUpActivity extends AppCompatActivity {
         return msg;
     }
 
-    // Firestore user model
+
     public static class User {
         public String username;
         public String email;

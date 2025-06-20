@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="24dp"
     android:background="@android:color/white">
 
-    <!-- Toolbar/Header -->
+    <!-- Toolbar -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
@@ -31,28 +32,39 @@
             android:textColor="@android:color/black" />
     </RelativeLayout>
 
-    <!-- Static Profile Image -->
-    <LinearLayout
+    <!-- Profile Image with Change Option -->
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:layout_marginBottom="32dp">
 
         <ImageView
+            android:id="@+id/profile_image"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="@drawable/circular_background"
-            android:src="@drawable/ic_profile_placeholder"
+            android:src="@drawable/mainlogo"
             android:scaleType="centerCrop" />
-    </LinearLayout>
+
+        <ImageView
+            android:id="@+id/change_image_button"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignBottom="@id/profile_image"
+            android:layout_alignRight="@id/profile_image"
+
+            android:background="@drawable/circular_background"
+            android:padding="4dp"/>
+    </RelativeLayout>
 
     <!-- Edit Form -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:elevation="4dp"
-        android:radius="12dp">
+        app:cardElevation="4dp"
+        app:cardCornerRadius="12dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -65,40 +77,47 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
+                app:hintEnabled="true"
+                app:hintAnimationEnabled="true"
                 android:hint="Username">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/username_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text" />
+                    android:inputType="text"
+                    android:maxLines="1"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Email Input -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:hintEnabled="true"
+                app:hintAnimationEnabled="true"
                 android:hint="Email">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/email_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress" />
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"/>
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
     <!-- Save Button -->
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/save_button"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:text="Save Changes"
         android:textColor="@android:color/white"
-        android:background="@drawable/button_background"
+        android:background="@drawable/gradient_background"
         android:textStyle="bold"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="16dp"
+        app:cornerRadius="8dp"/>
 
 </LinearLayout>

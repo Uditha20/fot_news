@@ -132,6 +132,17 @@
             android:textColor="@android:color/holo_red_dark"
             android:background="@drawable/button_outline_background"
             android:textStyle="bold" />
+        <Button
+            android:id="@+id/deleteAccountButton"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/button_outline_background"
+            android:text="Delete Account"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:elevation="0dp" />
     </LinearLayout>
 
 </LinearLayout>

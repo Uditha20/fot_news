@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    // UI Components
+
     private ImageView menuIcon, profileIcon;
     private CardView tournamentCard1, tournamentCard2;
     private LinearLayout navHome, navCalendar, navTrophy;
@@ -161,7 +161,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void handleSidebarDevInfoClick() {
         drawerLayout.closeDrawer(GravityCompat.START);
-        showDeveloperInfo();
+        Intent intent = new Intent(MainActivity.this, DeveloperInfoActivity.class);
+        startActivity(intent);
     }
 
     private void handleSidebarSettingsClick() {

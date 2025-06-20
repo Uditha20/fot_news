@@ -63,7 +63,10 @@
             android:exported="false"
             android:theme="@style/Theme.MyApplication"
             android:windowSoftInputMode="adjustResize" />
-
+        <activity android:name=".DeveloperInfoActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
